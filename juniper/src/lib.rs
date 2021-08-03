@@ -141,10 +141,11 @@ mod executor_tests;
 
 // Needs to be public because macros use it.
 pub use crate::util::to_camel_case;
+#[cfg(not(feature= "disable_introspection"))] 
+use crate::introspection::{INTROSPECTION_QUERY, INTROSPECTION_QUERY_WITHOUT_DESCRIPTIONS, IntrospectionFormat};
 
 use crate::{
     executor::{execute_validated_query, get_operation},
-    introspection::{INTROSPECTION_QUERY, INTROSPECTION_QUERY_WITHOUT_DESCRIPTIONS},
     parser::parse_document_source,
     validation::{validate_input_values, visit_all_rules, ValidatorContext},
 };
@@ -159,7 +160,7 @@ pub use crate::{
         FromContext, IntoFieldError, IntoResolvable, LookAheadArgument, LookAheadMethods,
         LookAheadSelection, LookAheadValue, OwnedExecutor, Registry, ValuesStream, Variables,
     },
-    introspection::IntrospectionFormat,
+
     macros::helper::{
         subscription::{ExtractTypeFromStream, IntoFieldResult},
         AsDynGraphQLValue,
@@ -345,7 +346,7 @@ where
     executor::resolve_validated_subscription(&document, operation, root_node, variables, context)
         .await
 }
-
+#[cfg(not(feature= "disable_introspection"))] 
 /// Execute the reference introspection query in the provided schema
 pub fn introspect<'a, S, QueryT, MutationT, SubscriptionT>(
     root_node: &'a RootNode<QueryT, MutationT, SubscriptionT, S>,

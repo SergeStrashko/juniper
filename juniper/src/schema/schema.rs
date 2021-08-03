@@ -63,9 +63,11 @@ where
         executor: &Executor<Self::Context, S>,
     ) -> ExecutionResult<S> {
         match field {
+            #[cfg(not(feature= "disable_introspection"))]        
             "__schema" => executor
                 .replaced_context(&self.schema)
                 .resolve(&(), &self.schema),
+            #[cfg(not(feature= "disable_introspection"))]        
             "__type" => {
                 let type_name: String = args.get("name").unwrap();
                 executor
@@ -118,6 +120,7 @@ where
     ) -> crate::BoxFuture<'b, ExecutionResult<S>> {
         use futures::future::ready;
         match field_name {
+            #[cfg(not(feature= "disable_introspection"))]
             "__schema" | "__type" => {
                 let v = self.resolve_field(info, field_name, arguments, executor);
                 Box::pin(ready(v))
@@ -128,7 +131,7 @@ where
         }
     }
 }
-
+#[cfg(not(feature= "disable_introspection"))]
 #[crate::graphql_object(
     name = "__Schema"
     Context = SchemaType<'a, S>,
@@ -171,7 +174,7 @@ where
         self.directive_list()
     }
 }
-
+#[cfg(not(feature= "disable_introspection"))]
 #[crate::graphql_object(
     name = "__Type"
     Context = SchemaType<'a, S>,
@@ -306,6 +309,7 @@ where
     }
 }
 
+#[cfg(not(feature= "disable_introspection"))]
 #[crate::graphql_object(
     name = "__Field",
     Context = SchemaType<'a, S>,
@@ -346,6 +350,7 @@ where
     }
 }
 
+#[cfg(not(feature= "disable_introspection"))]
 #[crate::graphql_object(
     name = "__InputValue",
     Context = SchemaType<'a, S>,
@@ -376,6 +381,7 @@ where
     }
 }
 
+#[cfg(not(feature= "disable_introspection"))]
 #[crate::graphql_object(
     name = "__EnumValue",
     Scalar = S,
@@ -404,6 +410,7 @@ where
     }
 }
 
+#[cfg(not(feature= "disable_introspection"))]
 #[crate::graphql_object(
     name = "__Directive",
     Context = SchemaType<'a, S>,

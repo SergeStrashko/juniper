@@ -26,6 +26,7 @@ default = [
     "url",
     "uuid",
 ]
+disable_introspection = []
 expose-test-schema = ["anyhow", "serde_json"]
 graphql-parser-integration = ["graphql-parser"]
 scalar-naivetime = []

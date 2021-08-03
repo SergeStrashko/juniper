@@ -1,8 +1,9 @@
 use std::collections::HashSet;
+#[cfg(not(feature= "disable_introspection"))] 
+use crate::introspection::IntrospectionFormat;
 
 use crate::{
     executor::Variables,
-    introspection::IntrospectionFormat,
     schema::model::RootNode,
     tests::fixtures::starwars::schema::{Database, Query},
     types::scalars::{EmptyMutation, EmptySubscription},
@@ -264,7 +265,7 @@ async fn test_introspection_possible_types() {
 
     assert_eq!(possible_types, vec!["Human", "Droid"].into_iter().collect());
 }
-
+#[cfg(not(feature= "disable_introspection"))]
 #[tokio::test]
 async fn test_builtin_introspection_query() {
     let database = Database::new();
@@ -278,7 +279,7 @@ async fn test_builtin_introspection_query() {
     let expected = schema_introspection_result();
     assert_eq!(result, (expected, vec![]));
 }
-
+#[cfg(not(feature= "disable_introspection"))]
 #[tokio::test]
 async fn test_builtin_introspection_query_without_descriptions() {
     let database = Database::new();

@@ -35,7 +35,7 @@ pub(super) fn sort_schema_value(value: &mut Value) {
         }
     }
 }
-
+#[cfg(not(feature= "disable_introspection"))]
 pub(crate) fn schema_introspection_result() -> value::Value {
     let mut v = graphql_value!({
         "__schema": {
@@ -1321,7 +1321,7 @@ pub(crate) fn schema_introspection_result() -> value::Value {
     sort_schema_value(&mut v);
     v
 }
-
+#[cfg(not(feature= "disable_introspection"))]
 pub(crate) fn schema_introspection_result_without_descriptions() -> value::Value {
     let mut v = graphql_value!({
         "__schema": {

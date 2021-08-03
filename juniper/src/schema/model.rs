@@ -204,6 +204,7 @@ impl<'a, S> SchemaType<'a, S> {
             .innermost_name()
             .to_owned();
 
+        #[cfg(not(feature= "disable_introspection"))]        
         registry.get_type::<SchemaType<S>>(&());
 
         directives.insert("skip".to_owned(), DirectiveType::new_skip(&mut registry));
@@ -212,6 +213,7 @@ impl<'a, S> SchemaType<'a, S> {
             DirectiveType::new_include(&mut registry),
         );
 
+        #[cfg(not(feature= "disable_introspection"))]        
         let mut meta_fields = vec![
             registry.field::<SchemaType<S>>("__schema", &()),
             registry
@@ -219,6 +221,7 @@ impl<'a, S> SchemaType<'a, S> {
                 .argument(registry.arg::<String>("name", &())),
         ];
 
+        #[cfg(not(feature= "disable_introspection"))]        
         if let Some(root_type) = registry.types.get_mut(&query_type_name) {
             if let MetaType::Object(ObjectMeta { ref mut fields, .. }) = *root_type {
                 fields.append(&mut meta_fields);
