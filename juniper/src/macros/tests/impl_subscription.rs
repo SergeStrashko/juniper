@@ -148,6 +148,7 @@ impl Subscription {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn object_introspect() {
     let res = util::run_info_query::<Query, Mutation, Subscription>("Subscription").await;
     assert_eq!(

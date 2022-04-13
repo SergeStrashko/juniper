@@ -253,6 +253,7 @@ where
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_object_field_simple() {
     run_field_info_query("Root", "simple", |field| {
         assert_eq!(
@@ -273,6 +274,7 @@ async fn introspect_object_field_simple() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_interface_field_simple() {
     run_field_info_query("Interface", "simple", |field| {
         assert_eq!(
@@ -293,6 +295,7 @@ async fn introspect_interface_field_simple() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_object_field_description() {
     run_field_info_query("Root", "description", |field| {
         assert_eq!(
@@ -316,6 +319,7 @@ async fn introspect_object_field_description() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_interface_field_description() {
     run_field_info_query("Interface", "description", |field| {
         assert_eq!(
@@ -339,6 +343,7 @@ async fn introspect_interface_field_description() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_object_field_deprecated_outer() {
     run_field_info_query("Root", "deprecatedOuter", |field| {
         assert_eq!(
@@ -359,6 +364,7 @@ async fn introspect_object_field_deprecated_outer() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_object_field_deprecated_outer_with_reason() {
     run_field_info_query("Root", "deprecatedOuterWithReason", |field| {
         assert_eq!(
@@ -379,6 +385,7 @@ async fn introspect_object_field_deprecated_outer_with_reason() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_object_field_deprecated() {
     run_field_info_query("Root", "deprecated", |field| {
         assert_eq!(
@@ -399,6 +406,7 @@ async fn introspect_object_field_deprecated() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_interface_field_deprecated() {
     run_field_info_query("Interface", "deprecated", |field| {
         assert_eq!(
@@ -419,6 +427,7 @@ async fn introspect_interface_field_deprecated() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_object_field_deprecated_descr() {
     run_field_info_query("Root", "deprecatedDescr", |field| {
         assert_eq!(
@@ -442,6 +451,7 @@ async fn introspect_object_field_deprecated_descr() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_interface_field_deprecated_descr() {
     run_field_info_query("Interface", "deprecatedDescr", |field| {
         assert_eq!(
@@ -465,6 +475,7 @@ async fn introspect_interface_field_deprecated_descr() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_object_field_attr_description() {
     run_field_info_query("Root", "attrDescription", |field| {
         assert_eq!(
@@ -488,6 +499,7 @@ async fn introspect_object_field_attr_description() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_interface_field_attr_description() {
     run_field_info_query("Interface", "attrDescription", |field| {
         assert_eq!(
@@ -511,6 +523,7 @@ async fn introspect_interface_field_attr_description() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_object_field_attr_description_long() {
     run_field_info_query("Root", "attrDescriptionLong", |field| {
         assert_eq!(
@@ -533,6 +546,7 @@ async fn introspect_object_field_attr_description_long() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_interface_field_attr_description_long() {
     run_field_info_query("Interface", "attrDescriptionLong", |field| {
         assert_eq!(
@@ -555,6 +569,7 @@ async fn introspect_interface_field_attr_description_long() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_object_field_attr_description_collapse() {
     run_field_info_query("Root", "attrDescriptionCollapse", |field| {
         assert_eq!(
@@ -580,6 +595,7 @@ async fn introspect_object_field_attr_description_collapse() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_interface_field_attr_description_collapse() {
     run_field_info_query("Interface", "attrDescriptionCollapse", |field| {
         assert_eq!(
@@ -605,6 +621,7 @@ async fn introspect_interface_field_attr_description_collapse() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_object_field_attr_deprecated() {
     run_field_info_query("Root", "attrDeprecated", |field| {
         assert_eq!(
@@ -625,6 +642,7 @@ async fn introspect_object_field_attr_deprecated() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_interface_field_attr_deprecated() {
     run_field_info_query("Interface", "attrDeprecated", |field| {
         assert_eq!(
@@ -645,6 +663,7 @@ async fn introspect_interface_field_attr_deprecated() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_object_field_attr_deprecated_reason() {
     run_field_info_query("Root", "attrDeprecatedReason", |field| {
         assert_eq!(
@@ -665,6 +684,7 @@ async fn introspect_object_field_attr_deprecated_reason() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_interface_field_attr_deprecated_reason() {
     run_field_info_query("Interface", "attrDeprecatedReason", |field| {
         assert_eq!(
@@ -685,6 +705,7 @@ async fn introspect_interface_field_attr_deprecated_reason() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_object_field_attr_deprecated_descr() {
     run_field_info_query("Root", "attrDeprecatedDescr", |field| {
         assert_eq!(
@@ -708,6 +729,7 @@ async fn introspect_object_field_attr_deprecated_descr() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_interface_field_attr_deprecated_descr() {
     run_field_info_query("Interface", "attrDeprecatedDescr", |field| {
         assert_eq!(

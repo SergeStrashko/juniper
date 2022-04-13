@@ -187,6 +187,7 @@ where
 }
 
 #[test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 fn introspect_custom_name() {
     run_type_info_query("ACustomNamedType", |object, fields| {
         assert_eq!(
@@ -211,6 +212,7 @@ fn introspect_custom_name() {
 }
 
 #[test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 fn introspect_with_lifetime() {
     run_type_info_query("WithLifetime", |object, fields| {
         assert_eq!(
@@ -233,6 +235,7 @@ fn introspect_with_lifetime() {
 }
 
 #[test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 fn introspect_with_generics() {
     run_type_info_query("WithGenerics", |object, fields| {
         assert_eq!(
@@ -255,6 +258,7 @@ fn introspect_with_generics() {
 }
 
 #[test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 fn introspect_simple_object() {
     run_type_info_query("SimpleObject", |object, fields| {
         assert_eq!(
@@ -287,6 +291,7 @@ fn introspect_simple_object() {
 }
 
 #[test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 fn introspect_ctx_switch() {
     run_type_info_query("CtxSwitcher", |_, fields| {
         assert!(fields.contains(&graphql_value!({

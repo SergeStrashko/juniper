@@ -123,6 +123,7 @@ where
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn default_name_introspection() {
     let doc = r#"
     {
@@ -177,6 +178,7 @@ async fn default_name_introspection() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn named_introspection() {
     let doc = r#"
     {
@@ -231,6 +233,7 @@ async fn named_introspection() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn no_trailing_comma_introspection() {
     let doc = r#"
     {
@@ -285,6 +288,7 @@ async fn no_trailing_comma_introspection() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn enum_description_introspection() {
     let doc = r#"
     {
@@ -339,6 +343,7 @@ async fn enum_description_introspection() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn enum_value_description_introspection() {
     let doc = r#"
     {
@@ -393,6 +398,7 @@ async fn enum_value_description_introspection() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn enum_deprecation_introspection() {
     let doc = r#"
     {
@@ -453,6 +459,7 @@ async fn enum_deprecation_introspection() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn enum_deprecation_no_values_introspection() {
     let doc = r#"
     {

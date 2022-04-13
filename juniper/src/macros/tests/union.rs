@@ -144,6 +144,7 @@ where
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_custom_name() {
     run_type_info_query("ACustomNamedUnion", |union, possible_types| {
         assert_eq!(
@@ -162,6 +163,7 @@ async fn introspect_custom_name() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_with_lifetime() {
     run_type_info_query("WithLifetime", |union, possible_types| {
         assert_eq!(
@@ -180,6 +182,7 @@ async fn introspect_with_lifetime() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_with_generics() {
     run_type_info_query("WithGenerics", |union, possible_types| {
         assert_eq!(
@@ -198,6 +201,7 @@ async fn introspect_with_generics() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_description_first() {
     run_type_info_query("DescriptionFirst", |union, possible_types| {
         assert_eq!(

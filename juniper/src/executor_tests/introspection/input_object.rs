@@ -148,6 +148,7 @@ where
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn default_name_introspection() {
     let doc = r#"
     {
@@ -255,6 +256,7 @@ fn default_name_input_value() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn no_trailing_comma_introspection() {
     let doc = r#"
     {
@@ -341,6 +343,7 @@ async fn no_trailing_comma_introspection() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn derive_introspection() {
     let doc = r#"
     {
@@ -415,6 +418,7 @@ fn derive_derived() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn named_introspection() {
     let doc = r#"
     {
@@ -476,6 +480,7 @@ async fn named_introspection() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn description_introspection() {
     let doc = r#"
     {
@@ -537,6 +542,7 @@ async fn description_introspection() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn field_description_introspection() {
     let doc = r#"
     {
@@ -623,6 +629,7 @@ async fn field_description_introspection() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn field_with_defaults_introspection() {
     let doc = r#"
     {

@@ -257,6 +257,7 @@ where
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_simple() {
     run_args_info_query("simple", |args| {
         assert_eq!(args.len(), 0);
@@ -265,6 +266,7 @@ async fn introspect_field_simple() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_exec_arg() {
     run_args_info_query("execArg", |args| {
         assert_eq!(args.len(), 0);
@@ -273,6 +275,7 @@ async fn introspect_field_exec_arg() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_exec_arg_and_more() {
     run_args_info_query("execArgAndMore", |args| {
         assert_eq!(args.len(), 1);
@@ -307,6 +310,7 @@ async fn introspect_field_exec_arg_and_more() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_single_arg() {
     run_args_info_query("singleArg", |args| {
         assert_eq!(args.len(), 1);
@@ -341,6 +345,7 @@ async fn introspect_field_single_arg() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_multi_args() {
     run_args_info_query("multiArgs", |args| {
         assert_eq!(args.len(), 2);
@@ -401,6 +406,7 @@ async fn introspect_field_multi_args() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_multi_args_trailing_comma() {
     run_args_info_query("multiArgsTrailingComma", |args| {
         assert_eq!(args.len(), 2);
@@ -461,6 +467,7 @@ async fn introspect_field_multi_args_trailing_comma() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_single_arg_descr() {
     run_args_info_query("singleArgDescr", |args| {
         assert_eq!(args.len(), 1);
@@ -495,6 +502,7 @@ async fn introspect_field_single_arg_descr() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_single_arg_descr_raw_idents() {
     run_args_info_query("singleArgDescrRawIdents", |args| {
         assert_eq!(args.len(), 1);
@@ -529,6 +537,7 @@ async fn introspect_field_single_arg_descr_raw_idents() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_multi_args_descr() {
     run_args_info_query("multiArgsDescr", |args| {
         assert_eq!(args.len(), 2);
@@ -589,6 +598,7 @@ async fn introspect_field_multi_args_descr() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_multi_args_descr_raw_idents() {
     run_args_info_query("multiArgsDescrRawIdents", |args| {
         assert_eq!(args.len(), 2);
@@ -649,6 +659,7 @@ async fn introspect_field_multi_args_descr_raw_idents() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_multi_args_descr_trailing_comma() {
     run_args_info_query("multiArgsDescrTrailingComma", |args| {
         assert_eq!(args.len(), 2);
@@ -709,6 +720,7 @@ async fn introspect_field_multi_args_descr_trailing_comma() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_attr_arg_descr() {
     run_args_info_query("attrArgDescr", |args| {
         assert_eq!(args.len(), 1);
@@ -742,6 +754,7 @@ async fn introspect_field_attr_arg_descr() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_attr_arg_descr_collapse() {
     run_args_info_query("attrArgDescrCollapse", |args| {
         assert_eq!(args.len(), 1);
@@ -775,6 +788,7 @@ async fn introspect_field_attr_arg_descr_collapse() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_arg_with_default() {
     run_args_info_query("argWithDefault", |args| {
         assert_eq!(args.len(), 1);
@@ -801,6 +815,7 @@ async fn introspect_field_arg_with_default() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_multi_args_with_default() {
     run_args_info_query("multiArgsWithDefault", |args| {
         assert_eq!(args.len(), 2);
@@ -845,6 +860,7 @@ async fn introspect_field_multi_args_with_default() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_multi_args_with_default_trailing_comma() {
     run_args_info_query("multiArgsWithDefaultTrailingComma", |args| {
         assert_eq!(args.len(), 2);
@@ -889,6 +905,7 @@ async fn introspect_field_multi_args_with_default_trailing_comma() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_arg_with_default_descr() {
     run_args_info_query("argWithDefaultDescr", |args| {
         assert_eq!(args.len(), 1);
@@ -915,6 +932,7 @@ async fn introspect_field_arg_with_default_descr() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_arg_with_default_descr_raw_ident() {
     run_args_info_query("argWithDefaultDescrRawIdent", |args| {
         assert_eq!(args.len(), 1);
@@ -941,6 +959,7 @@ async fn introspect_field_arg_with_default_descr_raw_ident() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_multi_args_with_default_descr() {
     run_args_info_query("multiArgsWithDefaultDescr", |args| {
         assert_eq!(args.len(), 2);
@@ -985,6 +1004,7 @@ async fn introspect_field_multi_args_with_default_descr() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_multi_args_with_default_descr_raw_ident() {
     run_args_info_query("multiArgsWithDefaultDescrRawIdent", |args| {
         assert_eq!(args.len(), 2);
@@ -1029,6 +1049,7 @@ async fn introspect_field_multi_args_with_default_descr_raw_ident() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_multi_args_with_default_trailing_comma_descr() {
     run_args_info_query("multiArgsWithDefaultTrailingCommaDescr", |args| {
         assert_eq!(args.len(), 2);
@@ -1073,6 +1094,7 @@ async fn introspect_field_multi_args_with_default_trailing_comma_descr() {
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_multi_args_with_default_trailing_comma_descr_raw_ident() {
     run_args_info_query("multiArgsWithDefaultTrailingCommaDescrRawIdent", |args| {
         assert_eq!(args.len(), 2);
@@ -1117,6 +1139,7 @@ async fn introspect_field_multi_args_with_default_trailing_comma_descr_raw_ident
 }
 
 #[tokio::test]
+#[cfg_attr(feature = "disable_introspection", ignore)]
 async fn introspect_field_args_with_complex_default() {
     run_args_info_query("argsWithComplexDefault", |args| {
         assert_eq!(args.len(), 2);

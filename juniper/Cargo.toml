@@ -30,6 +30,7 @@ expose-test-schema = ["anyhow", "serde_json"]
 graphql-parser-integration = ["graphql-parser"]
 scalar-naivetime = []
 schema-language = ["graphql-parser-integration"]
+disable_introspection = []
 
 [dependencies]
 juniper_codegen = { version = "0.15.9", path = "../juniper_codegen"  }
